@@ -5,7 +5,7 @@ lastmod: 2020-04-10T01:00:19+08:00
 description: "这里是我的博客建站记录"
 tags: []
 categories: []
-draft: true
+draft: false
 ---
 
 最近看到几个朋友（[Jiazheng](https://liujiazheng.github.io/)、[zcs](https://davidzhangbuaa.github.io/)）都开通了博客，一激动我就也开了。折腾了好几天之后，我的个人博客终于上线了，从此我也是有博客的人了🎉🎉🎉。欢迎各位朋友有事没事多来转转，不过我不保证这个网站能存活多长时间🐶。
