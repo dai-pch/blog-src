@@ -1,7 +1,7 @@
 ---
 title: "函数式编程笔记（一） —— 函数式编程的基本特征"
-date: 2021-10-27T21:00:00+08:00
-description: ""
+date: 2021-10-27T22:00:00+08:00
+description: "我学习函数式编程的记录和思考"
 draft: false
 tags: ["Functional Programming"]
 categories: ["Software"]
