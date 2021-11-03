@@ -128,4 +128,8 @@ func Stringify[T Stringer](s []T) (ret []string) {
 
 
 
+## 类型推导
+
+
+
 ## 一些看法
