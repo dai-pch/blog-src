@@ -8,7 +8,7 @@ categories: ["Software"]
 ---
 
 函数式编程中有一些常用的基本函数，这类函数通常与容器（列表）相关，经常能够简化编程。
-本篇将介绍函数式编程中的几类常用的函数。
+本篇将介绍函数式编程中常用的几类函数。
 
 ## map / foreach
 
@@ -141,7 +141,7 @@ fold函数是reduce的一种更通用的形式，它比reduce多出一个初始�
 
 然而，同map函数一样，fold函数还可以再被一般化。fold的第一个参数f是一个二元函数，但我们并不一定要求f的两个参数拥有相同的类型。
 举例来说，假如我们希望统计出一个元素为Bool的列表中，true元素的个数，我们可以这样写
-```Haskell
+```haskell
 >> fold (\init v -> if v then init + 1 else init) 0 [true, false, true, true, false]
 3
 ```
@@ -152,12 +152,27 @@ fold函数是reduce的一种更通用的形式，它比reduce多出一个初始�
 
 这里，匿名函数的两个参数init和v就是不同类型，init的类型为Integer，v的类型为Bool。
 
-类似的，请思考，fold函数的完整类型是什么？
+在Haskell中，上述fold函数的正式名称为foldl。其中l表示计算是从左向右进行的。类似的，还有一个foldr函数，其功能与foldl类型，只是对列表的计算是从右向左进行的。
+
+类似的，请思考，foldl和foldr的类型是什么？
 
 <details>
 <summary>点击查看答案</summary>
 
 ```
-fold :: (b -> a -> b) -> b -> [a] -> b
+foldl :: (b -> a -> b) -> b -> [a] -> b
+foldr :: (a -> b -> b) -> b -> [a] -> b
 ```
 </details>
+
+fold函数是一个非常强大的函数。之前所述的map/reduce/filter都可以使用fold函数定义。
+例如，使用foldr，可以定义map函数为
+```
+map f xs = foldr (\x ys -> (f x):ys) [] xs
+```
+更进一步的，foldl也可以用foldr定义！具体方式就留作习题吧。
+
+foldl和foldr在计算时只保留最终结果，如果需要计算的中间结果，则可以使用scanl和scanr代替。它们的功能与fold相同，只是返回值是一个列表，包含计算中每一步的中间结果。
+
+## zip
+
