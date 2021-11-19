@@ -11,7 +11,7 @@ categories: ["Software"]
 这两种数据结构贯穿了函数式编程的全部内容。
 list和tuple是如此强大，以至于Lisp这样的函数式语言，在语言层面没有结构体的情况下，仍然能够基于这两种数据结构，做出全部的编程抽象。
 
-> 实际上Lisp只有list没有tuple。由于Lisp是弱类型语言，实际list也承担了tuple的功能。
+> 实际上Lisp只有list没有tuple。由于Lisp是弱类型语言，list也承担了tuple的功能。
 
 ## List （列表）
 
@@ -56,7 +56,7 @@ tail函数接受一个list作为参数，返回该list除首节点外其他后�
 tail([42, 69, 613]) = [69, 613]
 ```
 
-cons函数接受一个数据和一个list，返回将该数据拼接到list的首位后得到一个的新list：
+cons函数接受一个数据和一个list，将该数据拼接到list的首位后得到一个新list，作为返回值：
 ```python
 cons(42, [69, 613]) = [42, 69, 613]
 cons(36, []) = [36]
